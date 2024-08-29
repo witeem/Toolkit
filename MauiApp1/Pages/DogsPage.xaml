@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiApp1"
+             x:Class="MauiApp1.Pages.DogsPage"
+             Title="DogsPage">
+
+
+    <StackLayout>
+        <Frame CornerRadius="0">
+            <Grid ColumnDefinitions="*,*,*">
+                <Frame CornerRadius="0" Grid.Column="0" Style="{StaticResource HoverableFrameStyle}">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ImportImageCommand}" />
+                    </Frame.GestureRecognizers>
+                    <Image Source="ipt.png" MinimumWidthRequest="30" MaximumWidthRequest="100" />
+                </Frame>
+                <Frame CornerRadius="0" Grid.Column="1">
+                    <Grid RowSpacing="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Label Grid.Column="0" Grid.Row="0" Text="Name" />
+                        <Entry Grid.Column="0" Grid.Row="1" Text="{Binding ImageName}" />
+                        <Label Grid.Column="0" Grid.Row="2" Text="Path" />
+                        <Entry Grid.Column="0" Grid.Row="3" Text="{Binding ImagePath}" />
+                    </Grid>
+                </Frame>
+                <Image Grid.Column="2" WidthRequest="200" HeightRequest="200" Aspect="AspectFit" Source="{Binding ImportedImage}" />
+            </Grid>
+        </Frame>
+        <Frame BorderColor="Transparent" CornerRadius="0" Margin="0,5,0,0">
+            <Grid RowSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Grid.Row="0" Text="Select the format you want to convert" FontAttributes="Bold" />
+                <Grid Grid.Column="0" Grid.Row="1" ColumnSpacing="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <RadioButton Grid.Column="0" Content=".jpg" GroupName="imgs"/>
+                    <RadioButton Grid.Column="1" Content=".jpeg" GroupName="imgs"/>
+                    <RadioButton Grid.Column="2" Content=".png" GroupName="imgs"/>
+                    <RadioButton Grid.Column="3" Content=".svg" GroupName="imgs"/>
+                    <RadioButton Grid.Column="4" Content=".gif" GroupName="imgs"/>
+                    <RadioButton Grid.Column="5" Content=".webp" GroupName="imgs"/>
+                </Grid>
+            </Grid>
+        </Frame>
+        
+    </StackLayout>
+</ContentPage>
