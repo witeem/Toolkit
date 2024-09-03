@@ -1,5 +1,7 @@
 ﻿using MauiApp1.Pages;
 using MauiApp1.ViewModel;
+using MauiLib1.IService.Image;
+using MauiLib1.Service.Image;
 
 namespace MauiApp1
 {
@@ -20,15 +22,17 @@ namespace MauiApp1
             // to understand the differences between [AddSingleton] and [AddTransient].
 
             builder.Services.AddSingleton<IConnectivity>(Connectivity.Current);
+            builder.Services.AddSingleton<IImageService, ImageService>();
+
 
             builder.Services.AddSingleton<MainPage>();
-            builder.Services.AddSingleton<MainViewModel>();
+            builder.Services.AddTransient<MainViewModel>();
 
             builder.Services.AddSingleton<DogsPage>();
-            builder.Services.AddSingleton<DogsViewModel>();
+            builder.Services.AddTransient<DogsViewModel>();
 
             builder.Services.AddSingleton<CatsPage>();
-            builder.Services.AddSingleton<CatsViewModel>();
+            builder.Services.AddTransient<CatsViewModel>();
 
             return builder.Build();
         }
