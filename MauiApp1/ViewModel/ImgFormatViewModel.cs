@@ -6,12 +6,12 @@ using System.Windows.Input;
 
 namespace MauiApp1.ViewModel
 {
-    public partial class DogsViewModel : ObservableObject
+    public partial class ImgFormatViewModel : ObservableObject
     {
         private readonly IImageService _imageService;
         readonly IConnectivity connectivity;
 
-        public DogsViewModel(IConnectivity connectivity, IImageService imageService)
+        public ImgFormatViewModel(IConnectivity connectivity, IImageService imageService)
         {
             this.connectivity = connectivity;
             _imageService = imageService;

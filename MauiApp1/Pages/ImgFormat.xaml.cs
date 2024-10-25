@@ -2,9 +2,9 @@ using MauiApp1.ViewModel;
 
 namespace MauiApp1.Pages;
 
-public partial class DogsPage : ContentPage
+public partial class ImgFormat : ContentPage
 {
-	public DogsPage(DogsViewModel vm)
+	public ImgFormat(ImgFormatViewModel vm)
 	{
 		InitializeComponent();
         BindingContext = vm;

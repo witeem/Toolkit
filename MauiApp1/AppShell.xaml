@@ -13,8 +13,8 @@
         <ShellContent  Route="MainPage"  ContentTemplate="{DataTemplate local:MainPage}" />
     </FlyoutItem>
     
-    <FlyoutItem Title="Dogs" Icon="dog.png">
-        <ShellContent  Route="DogsPage"  ContentTemplate="{DataTemplate views:DogsPage}" />
+    <FlyoutItem Title="Img Format" Icon="image_edit.png">
+        <ShellContent  Route="ImgFormat"  ContentTemplate="{DataTemplate views:ImgFormat}" />
     </FlyoutItem>
 
     <FlyoutItem Title="Cats" Icon="cat.png">

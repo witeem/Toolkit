@@ -23,16 +23,16 @@
                        Padding="10"
                        Margin="5,10,5,10"
                        HasShadow="True"
-                       FlexLayout.Basis="25%">      
+                       FlexLayout.Basis="25%">
                         <Frame.Background>
                             <LinearGradientBrush>
-                                <GradientStop Color="White" Offset="0.1" />
-                                <GradientStop Color="LightGray" Offset="1.2" />
+                                <GradientStop Color="DeepSkyBlue" Offset="0.1" />
+                                <GradientStop Color="DeepSkyBlue" Offset="1.2" />
                             </LinearGradientBrush>
                         </Frame.Background>
                         <VerticalStackLayout Padding="3">
                             <HorizontalStackLayout>
-                                <Image Source="dotnet_bot.png" HeightRequest="80" WidthRequest="100"/>
+                                <Image Source="{Binding ImageUrl}" HeightRequest="80" WidthRequest="100"/>
                                 <VerticalStackLayout Margin="3,0,0,0" Padding="3">
                                     <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="Micro" />
                                     <Label Text="{Binding Description}" />

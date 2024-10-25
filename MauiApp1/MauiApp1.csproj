@@ -60,15 +60,20 @@
 	  <None Remove="Resources\Images\dog.png" />
 	  <None Remove="Resources\Images\iimport.png" />
 	  <None Remove="Resources\Images\image_bg.png" />
+	  <None Remove="Resources\Images\image_edit.png" />
 	  <None Remove="Resources\Images\logo.png" />
 	  <None Remove="Resources\Images\menu.png" />
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui" Version="9.1.0" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.80" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.80" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="UraniumUI.Dialogs.CommunityToolkit" Version="2.10.2" />
+		<PackageReference Include="UraniumUI.Icons.MaterialSymbols" Version="2.10.2" />
+		<PackageReference Include="UraniumUI.Material" Version="2.10.2" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -79,13 +84,13 @@
 	  <MauiXaml Update="Pages\CatsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\DogsPage.xaml">
+	  <MauiXaml Update="Pages\ImgFormat.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="ExtendedControls\" />
+	  <Folder Include="Behaviors\" />
 	</ItemGroup>
 
 </Project>

@@ -12,7 +12,7 @@ namespace MauiApp1.ViewModel
         public MainViewModel(IConnectivity connectivity)
         {
             Items = new ObservableCollection<MainItemDto> { 
-                new MainItemDto { Key="1", Title = "DogsPage", Description = "Description 1", ImageUrl = "dog.png", Detail = "Detail 1" },
+                new MainItemDto { Key="1", Title = "ImgFormat", Description = "Image Format", ImageUrl = "image_edit.png", Detail = "jpg > png, png > jpg, jpg > jpeg ..." },
                 new MainItemDto { Key="2", Title = "CatsPage", Description = "Description 2", ImageUrl = "cat.png", Detail = "Detail 2" }
             };
             this.connectivity = connectivity;

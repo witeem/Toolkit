@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:uranium="http://schemas.enisn-projects.io/dotnet/maui/uraniumui"
+             xmlns:uui="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+             x:Class="MauiApp1.Pages.ImgFormat"
+             Title="ImgFormat">
+    <StackLayout>
+        <Frame CornerRadius="0">
+            <Grid ColumnDefinitions="*,*,*">
+                <Frame CornerRadius="0" Grid.Column="0" Style="{StaticResource HoverableFrameStyle}">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ImportImageCommand}" />
+                    </Frame.GestureRecognizers>
+                    <Image Source="ipt.png" MinimumWidthRequest="30" MaximumWidthRequest="100" />
+                </Frame>
+                <Frame CornerRadius="0" Grid.Column="1">
+                    <Grid RowSpacing="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <uui:TextField Grid.Column="0" Grid.Row="0" Title="Name" Text="{Binding OriFile.FileName}" />
+                        <uui:TextField Grid.Column="0" Grid.Row="1" Title="Path" Text="{Binding OriFile.FullPath}" />
+                        <uui:TextField Grid.Column="0" Grid.Row="2" Title="Size" Text="{Binding OriFile.FileSize}" />
+                    </Grid>
+                </Frame>
+                <Image Grid.Column="2" WidthRequest="200" HeightRequest="200" Aspect="AspectFit" Source="{Binding ImportedImage}" />
+            </Grid>
+        </Frame>
+        <Frame BorderColor="Transparent" CornerRadius="0" Margin="0,5,0,0">
+            <Grid ColumnDefinitions="*,*">
+                <Grid RowSpacing="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label Grid.Column="0" Grid.Row="0" Text="Select the format you want to convert" FontAttributes="Bold" />
+                    <Grid Grid.Column="0" Grid.Row="1" ColumnSpacing="20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <uui:RadioButtonGroupView Grid.ColumnSpan="6"  Orientation="Horizontal">
+                            <uui:RadioButton Grid.Column="0" Text=".jpg" />
+                            <uui:RadioButton Grid.Column="1" Text=".jpeg"/>
+                            <uui:RadioButton Grid.Column="2" Text=".png" />
+                            <uui:RadioButton Grid.Column="3" Text=".svg" />
+                            <uui:RadioButton Grid.Column="4" Text=".gif" />
+                            <uui:RadioButton Grid.Column="5" Text=".webp"/>
+                        </uui:RadioButtonGroupView>
+                    </Grid>
+                    <Label Grid.Column="0" Grid.Row="2" Text="Length And Width" FontAttributes="Bold" />
+                    <Grid Grid.Column="0" Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120" />
+                            <ColumnDefinition Width="40" />
+                            <ColumnDefinition Width="120" />
+                        </Grid.ColumnDefinitions>
+                        <uui:TextField Grid.Column="0" Grid.Row="0" Text="{Binding OriFile.Height}" />
+                        <Label Grid.Column="1" Grid.Row="0" Text="X" VerticalOptions="Center" HorizontalOptions="Center" />
+                        <uui:TextField Grid.Column="2" Grid.Row="0" Text="{Binding OutputFile.Width}" />
+                    </Grid>
+                    <Label Grid.Column="0" Grid.Row="4" Text="Output Path" FontAttributes="Bold" />
+                    <Grid Grid.Column="0" Grid.Row="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <uui:TextField Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4" Text="{Binding OutputFile.FullPath}">
+                            <uui:TextField.Attachments>
+                                <uui:ButtonView HorizontalOptions="Center" StrokeShape="{RoundRectangle CornerRadius=5}">
+                                    <Label Text="Select 👋" />
+                                </uui:ButtonView>
+                            </uui:TextField.Attachments>
+                        </uui:TextField>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Frame>
+
+    </StackLayout>
+</ContentPage>
